@@ -24,7 +24,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3 
         with:
           token: ${{ secrets.repo_access_token }}
-          repository: username/my-repo
+          repository: rohitbagal1/ga-python-test
           event-type: my-event
 
     
