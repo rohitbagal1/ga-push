@@ -15,15 +15,16 @@ jobs:
   read-file: 
 
     runs-on: ubuntu-latest 
+    #build container # deployment container
 
     steps: 
 
-      - name: Checkout code 
+      - name: trigeer automated test repo
 
-        uses: actions/checkout@v3 
+        uses: peter-evans/repository-dispatch@v3 
+        with:
+          token: ${{ secrets.repo_access_token }}
+          repository: username/my-repo
+          event-type: my-event
 
-      - name: Read the text file 
-
-        run: | 
-
-          cat test.txt 
+    
